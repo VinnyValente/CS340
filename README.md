@@ -1,12 +1,48 @@
-**How do you write programs that are maintainable, readable, and adaptable?**
+# Grazioso Salvare Animal Shelter Dashboard
 
-I prioritize modularity, consistent naming conventions, concise comments, adherence to style guidelines, and regular code reviews. For Project One, the CRUD module clearly segmented database operations, enhancing readability and future adaptability. Advantages of working in this way include using a standalone CRUD module decouples database interactions from the main application, allowing for easy modifications and potential reuse in other projects.
+## Project Overview
+Grazioso Salvare, an international rescue-animal training company, collaborates with animal shelters around Austin, Texas, to identify dogs suitable for search-and-rescue training. This dashboard enables users at Grazioso Salvare to easily view, filter, and analyze shelter data to identify potential rescue dogs for various operations.
 
-**How do you approach a problem as a computer scientist?**
+## Functionality
+- **Display an interactive data table** of shelter animals.
+- **Filter the table** based on rescue type: Water, Mountain, Disaster, or display all animals.
+- **Visualize breed distribution** with a pie chart.
+- **Display geolocation** on a map highlighting the location of a selected animal.
+  
+![1](https://github.com/user-attachments/assets/11fda99a-baad-48de-bd43-cf5704fe4239)
+![2](https://github.com/user-attachments/assets/c8bc566d-1419-4d45-90b2-c0712c7c0af9)
+![3](https://github.com/user-attachments/assets/10b2748f-706b-43b8-be67-ca4aca6e6802)
+![4](https://github.com/user-attachments/assets/0e4ebc77-f5f1-4504-b8a8-65949b5dd7ee)
 
-I begin by understanding the client's requirements, then plan and design a solution. I break down the overall problem into smaller tasks and adopt an iterative development process. For the Grazioso Salvare project, this meant selecting appropriate tools, designing the dashboard, and refining based on feedback. Differences from previous assignments include the fact that this project demanded a holistic solution integrating multiple tools and a deeper grasp of the client's specific needs. A future database creation strategy I would use is to assess data scale and complexity, choose a suitable database type, and factor in scalability and potential data usage patterns.
+## Tools & Technologies
+- **MongoDB**: Used as the primary database for storing animal shelter data. MongoDB is a NoSQL database known for its flexibility, performance, and ability to interface with Python.
+- **Python**: The core programming language for data manipulation and dashboard functionality.
+- **Dash by Plotly**: A web application framework used for creating the interactive dashboard and data visualizations.
+- **Dash-Leaflet**: Provides geolocation and mapping capabilities.
+- **Plotly Express**: Enables the creation of interactive graphs and plots for data visualization.
 
-**What do computer scientists do, and why does it matter?**
+## Resources & Software Applications
+- [MongoDB Documentation](https://www.mongodb.com/docs/)
+- [Dash Documentation](https://dash.plotly.com/)
+- [Plotly Express Documentation](https://plotly.com/python/plotly-express/)
 
-Computer scientists develop technology solutions addressing diverse challenges. Our work fosters innovation and efficiency across sectors. This project's impact on Grazioso Salvare
-dashbpard enhanced Grazioso Salvare's ability to identify rescue dogs efficiently, facilitating quicker, informed decisions and positively impacting animal rescue operations.
+## Steps to Reproduce the Project
+1. **Set up MongoDB**: Install MongoDB and populate it with animal shelter data.
+2. **Connect to MongoDB**: Use Python's `pymongo` library to establish a connection to your MongoDB instance.
+3. **Create CRUD operations**: Implement the necessary Create, Read, Update, and Delete operations in `AnimalShelter.py`.
+4. **Design the Dashboard**: Use Dash components to build the layout of the dashboard.
+5. **Implement Callbacks**: Add callback functions to handle user interactions and update data visualizations dynamically.
+6. **Test & Deploy**: Ensure that the dashboard works as intended, then deploy it on a server.
+
+## Challenges & Solutions
+- **Challenge 1: Handling various data types from MongoDB, especially the ObjectID field**  
+  **Solution**: Used `DataFrame.drop` from the pandas library to remove the `_id` field before passing data to Dash components.
+  
+- **Challenge 2: Providing interactive data visualizations that respond to user filters**  
+  **Solution**: Utilized Dash's callback functionality to monitor changes in dropdown selections and update the visual components accordingly.
+
+- **Challenge 3: Displaying geolocation data for selected animals**  
+  **Solution**: Integrated `Dash-Leaflet` for interactive maps and utilized callback functions to update the map based on the selected animal's data.
+
+## Conclusion
+The Grazioso Salvare Animal Shelter Dashboard provides an intuitive and interactive platform for identifying potential rescue dogs. It combines MongoDB's powerful data management capabilities with Dash's interactive and visually engaging tools.
